@@ -10,6 +10,17 @@ interface TileProps {
 }
 
 export const Tile = ({ letter, pointValue, size }: TileProps) => {
+  const styles = getStyles({ size })
+
+  return (
+    <div css={styles.tile}>
+      <span css={styles.letter}>{letter}</span>
+      <span css={styles.points}>{pointValue}</span>
+    </div>
+  )
+}
+
+const getStyles = ({ size }: Pick<TileProps, 'size'>): Stylesheet => {
   const black = tinycolor('black')
   const white = tinycolor('white')
   const tileBase = '#f5cf90'
@@ -17,7 +28,7 @@ export const Tile = ({ letter, pointValue, size }: TileProps) => {
   const small = (size * 0.75) / 19
   const med = small * 1.5
 
-  const styles: Stylesheet = {
+  return {
     tile: {
       backgroundColor: tileBase,
       backgroundImage:
@@ -67,10 +78,4 @@ export const Tile = ({ letter, pointValue, size }: TileProps) => {
       transform: 'translate(50%,50%)',
     },
   }
-  return (
-    <div css={styles.tile}>
-      <span css={styles.letter}>{letter}</span>
-      <span css={styles.points}>{pointValue}</span>
-    </div>
-  )
 }
