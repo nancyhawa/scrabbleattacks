@@ -1,9 +1,12 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core'
 import logo from './logo.svg';
 import './App.css';
+import { Global } from '@emotion/core'
 
 function App() {
   return (
+    <Global css={{background:'pink'}} />
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
