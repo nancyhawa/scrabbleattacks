@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import tinycolor from 'tinycolor2'
+import { Stylesheet } from 'types'
 
 interface TileProps {
   letter: string
@@ -16,7 +17,7 @@ export const Tile = ({ letter, pointValue, size }: TileProps) => {
   const small = (size * 0.75) / 19
   const med = small * 1.5
 
-  const styles = {
+  const styles: Stylesheet = {
     tile: {
       backgroundColor: tileBase,
       backgroundImage:
