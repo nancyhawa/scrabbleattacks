@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Rules:
 
-## Available Scripts
+- All tiles are flipped over at the beginning
+- Players take turns, flipping over one tile at a time
+- If there is a word of 4 or more letters in the overturned tiles, a player can shout it out to
+  claim it
+- Also, if a player can add an overturned title to an existing word or combine two existing words to
+  make a new word,
+- You can't just add an `S`, `D`, or `R` to the end of a word
+- Once tiles are in a word, they can't be removed, although they can be rearranged within that word
+  or combined with other tiles or words
+- The last person to claim a word has the next turn
+- It doesn't have to be your turn to claim a word
+- Your score is the scrabble point value of all the words you've claimed
 
-In the project directory, you can run:
+UI:
 
-### `npm start`
+- 3 columns
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| player 1 | tiles | player 2 |
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```
+FOO BAR (Nancy's words)
 
-### `npm test`
+---------------------------
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[] [] [] [] [] []  (unflipped tiles)
 
-### `npm run build`
+[] [] [] [] []
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[A] [B] [C]
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+----------------------------
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+CAT FROG (Herb's words)
 
-### `npm run eject`
+Herb's turn to flip
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Components:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Tile
+  - shows letter and point value on one side
+  - can be flipped
+- Word 
+  - consists of multiple tiles in order
+  - has a score
+- Word input
+  - validates a word
 
-## Learn More
+- Player
+  - has zero or more words
+  - has a score
+  - can flip a tile if it's their turn
+  - can input a word at any time
+  - 
+  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Events:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- tile flip
+- word proposed
+- word accepted/rejected
+- turn assignment
