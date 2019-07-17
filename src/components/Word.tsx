@@ -4,6 +4,7 @@ import tinycolor from 'tinycolor2'
 import { Stylesheet } from 'types'
 import random from 'seed-random'
 import { Tile } from './Tile'
+import { Letter } from 'scrabble'
 
 interface WordProps {
   size: number
@@ -17,7 +18,7 @@ export const Word = ({ size = 100, letters, randomSeed = '' }: WordProps) => {
   return (
     <div css={styles.word}>
       {letters.split('').map((letter, i) => (
-        <Tile key={i} size={size} letter={letter} points={1} randomSeed={letter} />
+        <Tile key={i} size={size} letter={letter as Letter} randomSeed={letter} />
       ))}
     </div>
   )
