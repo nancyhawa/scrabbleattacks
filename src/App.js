@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import logo from './logo.svg';
-import './App.css';
 import { Global } from '@emotion/core'
 
 function App() {
