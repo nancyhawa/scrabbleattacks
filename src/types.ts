@@ -1,4 +1,7 @@
-import { CSSObject } from '@emotion/core'
-export type Stylesheet = {
-  [k: string]: CSSObject
+import { Letter } from 'scrabble'
+
+export interface TileProps {
+  letter: Letter
+  size: number
+  seed?: string
 }
