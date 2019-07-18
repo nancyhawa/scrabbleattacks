@@ -1,4 +1,4 @@
-## Rules:
+## Rules
 
 - All tiles are flipped over at the beginning
 - Players take turns, flipping over one tile at a time
@@ -13,7 +13,7 @@
 - It doesn't have to be your turn to claim a word
 - Your score is the scrabble point value of all the words you've claimed
 
-UI:
+## UI
 
 - 3 columns
 
@@ -37,30 +37,24 @@ CAT FROG (Herb's words)
 Herb's turn to flip
 ```
 
-
-
-## Components:
+## Components
 
 - Tile
   - shows letter and point value on one side
   - can be flipped
-- Word 
+- Word
   - consists of multiple tiles in order
   - has a score
 - Word input
   - validates a word
-
 - Player
   - has zero or more words
   - has a score
   - can flip a tile if it's their turn
   - can input a word at any time
-  - 
-  
+- Board
 
-
-
-## Events:
+## Events
 
 - tile flip
 - word proposed
